@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/12/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hexo + Butterfly + Github 搭建个人博客</title>
+    <url>/2021/12/05/hexo-build/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>早就想搭建一个属于自己的个人博客了，但是由于有选择困难症和拖延症，一直都没有动手，直到看到butterfly主题的项目，实在是颜值太高了，就花了十多天搭建一个属于自己的个人博客。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>hexo搭建比较简单，可以参考一下<a href="https://hexo.io/zh-cn/docs/">hexo官方文档</a>，这里简单记录一下</p>
+<h3 id="安装必备软件"><a href="#安装必备软件" class="headerlink" title="安装必备软件"></a>安装必备软件</h3><ul>
+<li>git</li>
+<li>nodejs(12.0以上)</li>
+</ul>
+<p>具体步骤在git和nodejs安装在<a href="https://hexo.io/zh-cn/docs/">hexo官方文档</a>上，有详细说明，就不再介绍。<br>要注意虽然hexo对nodejs的最低版本要求是10.0，但是后续butterfly对nodejs的最低版本要求是12.0。</p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>执行命令即可完成安装hexo</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
+
+<p>在指定目录执行命令</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>生成目录结构为</p>
+<p><img src="https://images.ivoryforest.site/hexo-build/image-20211209100408741.png" alt="image-20211209100408741"></p>
+<p>继续执行命令，启动服务器</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo g  <span class="comment"># 编译生成</span></span><br><span class="line">hexo s  <span class="comment"># 启动服务</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://images.ivoryforest.site/hexo-build/image-20211212105700883.png" alt="image-20211212105700883"></p>
+<p>打开浏览器，输入网址: <a href="http://localhost:4000/">http://localhost:4000</a> ，即可看到hexo生成的静态页面。</p>
+<p><img src="https://images.ivoryforest.site/hexo-build/image-20211212110046361.png" alt="image-20211212110046361"></p>
+<p>主题是默认的，我们需要选择自己喜欢的主题，主题放在themes目录下，接下来我们安装butterfly。</p>
+<h3 id="安装主题butterfly"><a href="#安装主题butterfly" class="headerlink" title="安装主题butterfly"></a>安装主题butterfly</h3><p>这里可以参考一下<a href="https://butterfly.js.org/posts/21cfbf15/">butterfly安装文档</a>，</p>
+<p>执行命令</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone <span class="literal">-b</span> master https://github.com/jerryc127/hexo<span class="literal">-theme</span><span class="literal">-butterfly</span>.git themes/butterfly</span><br></pre></td></tr></table></figure>
+<p>并修改安装目录下的_config.yml，把主题改为butterfly，</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
+<p>并且安装相关的插件</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-renderer</span><span class="literal">-pug</span> hexo<span class="literal">-renderer</span><span class="literal">-stylus</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+<p>并且依据官方的建议把themes/butterfly/_config.yml复制到主目录并更名为_config.butterfly.yml</p>
+<p>接下来我们可以对着butterfly进阶文档可以新建页面，完善菜单。我们可以参考一下别人的博客以及原始配置，来搭建合适自己的博客。</p>
+<h2 id="发布到github"><a href="#发布到github" class="headerlink" title="发布到github"></a>发布到github</h2><p>之前的搭建只能在本地看到，但是要让别人能够看到又不想搭建自己的服务器的话，可以利用github pages，把hexo生成的发布上去即可。</p>
+<h4 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h4><p>如果第一次需要设置用户名和邮箱:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;your username&quot;</span><br><span class="line">git config --global user.email &quot;your email&quot;</span><br></pre></td></tr></table></figure>
+
+<p>生成公钥</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa</span><br></pre></td></tr></table></figure>
+<p>在C:/用户/&lt;用户名&gt;/.ssh目录下找到id_rsa.pub，添加到要发布项目下的Deploy keys:</p>
+<p><img src="https://images.ivoryforest.site/hexo-build/image-20211212132115717.png" alt="image-20211212132115717"></p>
+<p>最后可以测试一下连接</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+<p>如果测试成功，会有成功的回复。</p>
+<h4 id="配置hexo发布插件"><a href="#配置hexo发布插件" class="headerlink" title="配置hexo发布插件"></a>配置hexo发布插件</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="comment"># 你的仓库地址，例如：git@github.com:ningbuer/ivoryforest.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="comment"># 分支 例如：master</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在根目录执行命令</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g  <span class="comment"># 编译生成</span></span><br><span class="line">hexo d  <span class="comment"># 发布</span></span><br></pre></td></tr></table></figure>
+
+<p>然后就可以在github项目上看到上传的内容了</p>
+<h4 id="配置静态站点"><a href="#配置静态站点" class="headerlink" title="配置静态站点"></a>配置静态站点</h4><p>通过点击项目setting-&gt;pages 可以配置静态站点，如果是你免费会员，那么该项目必须是public的。</p>
+<p><img src="https://images.ivoryforest.site/hexo-build/image-20211212140950264.png" alt="image-20211212140950264"></p>
+<p>选择好分支和目录之后，点击保存即可开启站点。分配的域名站点为</p>
+<p><img src="https://images.ivoryforest.site/hexo-build/image-20211212141250508.png" alt="image-20211212141250508"></p>
+<p>后缀会带上项目名，如果希望项目访问为根目录那么需要站点名和用户名一致，或者使用域名。</p>
+<p>访问该地址即可看到跟本地一样的了。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>butterfly</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+</search>
